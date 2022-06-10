@@ -52,6 +52,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Customers\State\BehaviorManager.cs" />
      <Compile Include="Assets\Scripts\Products\Wheat.cs" />
      <Compile Include="Assets\Scripts\Customers\StoresHandler.cs" />
      <Compile Include="Assets\Scripts\Avatar\UIDrawer.cs" />
@@ -62,12 +63,14 @@
      <Compile Include="Assets\Scripts\Customers\Customer.cs" />
      <Compile Include="Assets\Scripts\Misc\PoolObjects.cs" />
      <Compile Include="Assets\Scripts\Customers\CustomerSpawner.cs" />
+     <Compile Include="Assets\Scripts\Customers\State\ICustomerBehavior.cs" />
      <Compile Include="Assets\Scripts\AbstractStore.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IGive.cs" />
      <Compile Include="Assets\Scripts\Maker\MakerPlant.cs" />
      <Compile Include="Assets\Scripts\Products\Product.cs" />
      <Compile Include="Assets\Scripts\Machine.cs" />
      <Compile Include="Assets\Scripts\Avatar\Mover.cs" />
+     <Compile Include="Assets\Scripts\Customers\State\PickProductsBehavior.cs" />
      <Compile Include="Assets\Scripts\Avatar\AvatarController.cs" />
      <Compile Include="Assets\Scripts\Store\StoreVisualizer.cs" />
      <Compile Include="Assets\Scripts\Avatar\Carrier\VerticalVisualizer.cs" />
@@ -79,12 +82,9 @@
      <Compile Include="Assets\Scripts\Avatar\InputReceiver.cs" />
      <Compile Include="Assets\Scripts\Maker\Maker.cs" />
      <Compile Include="Assets\Scripts\Store\GiveStore.cs" />
-     <Compile Include="Assets\Scripts\Products\Tomato.cs" />
-     <Compile Include="Assets\Scripts\Customers\State\BehaviorManager.cs" />
-     <Compile Include="Assets\Scripts\Customers\State\ICustomerBehavior.cs" />
-     <Compile Include="Assets\Scripts\Customers\State\PickProductsBehavior.cs" />
-     <Compile Include="Assets\Scripts\Customers\State\PickBehavior.cs" />
      <Compile Include="Assets\Scripts\Customers\State\ChooseStoreBehavior.cs" />
+     <Compile Include="Assets\Scripts\Products\Tomato.cs" />
+     <Compile Include="Assets\Scripts\Customers\State\PickBehavior.cs" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Unity/2020.3.33f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -705,13 +705,13 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{3e56c54c-80ae-6f5a-1362-3ec9f1a40863}</Project>
-      <Name>NavMeshComponents</Name>
-    </ProjectReference>
     <ProjectReference Include="NavMeshComponentsEditor.csproj">
       <Project>{0393307f-534f-194e-f373-bb038a31b214}</Project>
       <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{3e56c54c-80ae-6f5a-1362-3ec9f1a40863}</Project>
+      <Name>NavMeshComponents</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

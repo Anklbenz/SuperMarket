@@ -23,7 +23,7 @@ public class Customer : MonoBehaviour
    }
    
    private void FixedUpdate(){
-       _behaviorManager.Update();
+ //      _behaviorManager.Update();
    }
 
 
