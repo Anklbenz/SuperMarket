@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 1554178489200108103}
   - component: {fileID: 7751324522696822288}
   - component: {fileID: 1554178489200108104}
+  - component: {fileID: 3273414069671775733}
   m_Layer: 0
   m_Name: WheatMaker
   m_TagString: Untagged
@@ -202,7 +203,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5294058534558879868, guid: 1336e04d516cac141adae41ad946fc41, type: 3}
-  growDelay: 2
-  poolParent: {fileID: 1554178487898512262}
-  growPoints:
+  produceTime: 2000
+  resultShop: {fileID: 3273414069671775733}
+--- !u!114 &3273414069671775733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554178489200108102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0673c504a329f4b49814af4009db4ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productPositions:
   - {fileID: 1554178487659494542}
+  productsParent: {fileID: 1554178487898512262}
+  pickPoint: {fileID: 0}
+  storeType: 1
