@@ -13,8 +13,8 @@ public abstract class Repository
     public int FreeSpace => MaxCount - Count;
     public int MaxCount{ get; }
 
-    public abstract bool CanPut{ get; }
-    public abstract bool CanGet{ get; }
+    public virtual bool CanPut => !OutOfSpace;
+    public virtual bool CanGet => Items.Count > 0;
     public int Count => Items.Count;
 
     protected Repository(int maxCount){
@@ -30,7 +30,7 @@ public abstract class Repository
 
     public Product Get(ProductType type){
         var product = Items.FindLast(item => item.Type == type);
-        
+
         if (!product) return null;
         Items.Remove(product);
         GetEvent?.Invoke();
@@ -40,7 +40,7 @@ public abstract class Repository
     public Product Get(){
         var product = Items.Last();
         if (!product) return null;
-        
+
         Items.Remove(product);
         GetEvent?.Invoke();
         return product;

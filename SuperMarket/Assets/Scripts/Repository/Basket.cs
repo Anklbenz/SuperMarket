@@ -10,10 +10,10 @@ public class Basket : Repository, IDisposable
     public override  bool CanGet => Items.Count > 0 && _getDelayTimer.IsDone();
 
     private readonly CustomTimer _putDelayTimer, _getDelayTimer;
-    private BasketViewer _basketViewer;
+    private StackViewer _stackViewer;
 
     public Basket(int maxCount, Transform basketTransform, GameObject maxLabel) : base(maxCount) {
-        _basketViewer = new BasketViewer(this, basketTransform, maxLabel);
+        _stackViewer = new StackViewer(this, basketTransform, maxLabel);
 
         _putDelayTimer = new CustomTimer(PUT_IN_DELAY);
         _getDelayTimer = new CustomTimer(PUT_OUT_DELAY);

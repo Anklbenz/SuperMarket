@@ -1,11 +1,13 @@
 using Enums;
+using UnityEngine;
 
 public class PutShop : Shop, IPut
 {
+    [SerializeField] protected ProductType storeType;
     public ProductType Type => storeType;
-    public bool CanPut => Store.CanPut;
+    public bool CanPut => StoreDefinitePositionView.CanPut;
 
     public void Put(Product product){
-        Store.Put(product);
+        StoreDefinitePositionView.Put(product);
     }
 }
