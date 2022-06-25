@@ -9,7 +9,7 @@ public class CustomerMainBehavior : IBehavior
      }
 
     public void Enter(){
-        if (_bot.BasketHasFreeSpace)
+        if (_bot.HasFreeSpace)
             _behaviorSwitcher.SwitchBehavior<ComeToRandomShopBehavior>();
         else
             _behaviorSwitcher.SwitchBehavior<ComeToCashBehavior>();

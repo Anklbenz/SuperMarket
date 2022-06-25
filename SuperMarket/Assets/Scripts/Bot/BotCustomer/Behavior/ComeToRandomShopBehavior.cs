@@ -12,9 +12,9 @@ public class ComeToRandomShopBehavior : IBehavior, IUpdateable
     }
 
     public void Enter(){
-        _bot.RequiredQuantity = Random.Range(1, _bot.BasketFreeSpace);
-        _bot.PutShop = _bot.GetRandomStore();
-        _bot.MoveTo(_bot.PutShop.PickPoint);
+        _bot.RequiredQuantity = Random.Range(1, _bot.FreeSpaceAmount);
+        _bot.putShop = _bot.GetRandomStore();
+        _bot.MoveTo(_bot.putShop.PickPoint);
         _isMoving = true;
     }
 

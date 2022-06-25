@@ -1,11 +1,8 @@
-using Enums;
-using UnityEngine;
-
-public class Bin : MonoBehaviour, IPut
+public class Bin : Shop
 {
-    public ProductType Type => ProductType.All;
-    public bool CanPut => true;
-    public void Put(Product product){
-        product.gameObject.SetActive(false);
+    public override bool CanPut => true;
+
+    public Bin(){
+        Store = new StoreBin();
     }
 }

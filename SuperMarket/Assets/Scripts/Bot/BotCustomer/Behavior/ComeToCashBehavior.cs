@@ -12,7 +12,7 @@ public class ComeToCashBehavior : IBehavior, IUpdateable
      }
 
     public void Enter(){
-        _bot.MoveTo(_bot.PutShop.PickPoint);
+        _bot.MoveTo(_bot.putShop.PickPoint);
         _isMoving = true;
     }
 

@@ -15,19 +15,19 @@ public class ProductFactory : MonoBehaviour
     protected virtual void Start(){
         _pool = new PoolObjects<Product>(prefab, POOL_SIZE, true, transform);
 
-        resultShop.StoreDefinitePositionView.PutEvent += TryProduce;
-        resultShop.StoreDefinitePositionView.GetEvent += TryProduce;
+        resultShop.Store.PutEvent += TryProduce;
+        resultShop.Store.GetEvent += TryProduce;
 
         TryProduce();
     }
 
     protected virtual void OnDestroy(){
-        resultShop.StoreDefinitePositionView.PutEvent -= TryProduce;
-        resultShop.StoreDefinitePositionView.GetEvent -= TryProduce;
+        resultShop.Store.PutEvent -= TryProduce;
+        resultShop.Store.GetEvent -= TryProduce;
     }
 
     protected virtual void TryProduce(){
-        if (InProcess || resultShop.StoreDefinitePositionView.OutOfSpace) return;
+        if (InProcess || !resultShop.Store.HasFreeSpace) return;
         Produce();
     }
 
@@ -36,7 +36,6 @@ public class ProductFactory : MonoBehaviour
         await UniTask.Delay(produceTime);
         InProcess = false;
         var product = _pool.GetFreeElement();
-        resultShop.StoreDefinitePositionView.Put(product);
-
+        resultShop.Store.Put(product);
     }
 }

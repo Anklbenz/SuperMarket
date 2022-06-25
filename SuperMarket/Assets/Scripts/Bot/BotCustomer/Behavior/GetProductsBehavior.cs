@@ -13,7 +13,7 @@ public class GetProductsBehavior : IBehavior
     }
     
     public void Exit(){
-        _bot.PutShop.StoreDefinitePositionView.PutEvent -= GetProducts;
+     //   _bot.putShopWithFixedPositions.StoreWithFixedPositions.PutEvent -= GetProducts;
     }
 
     private void GetProducts(){
@@ -22,7 +22,7 @@ public class GetProductsBehavior : IBehavior
                 _bot.RequiredQuantity--;
             }
             else{
-                _bot.PutShop.StoreDefinitePositionView.PutEvent += GetProducts;
+              //  _bot.putShopWithFixedPositions.StoreWithFixedPositions.PutEvent += GetProducts;
                 return;
             }
         }

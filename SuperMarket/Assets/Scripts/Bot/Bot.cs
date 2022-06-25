@@ -10,11 +10,11 @@ public class Bot : MonoBehaviour
     [SerializeField] private Shop checkoutShop;
     [SerializeField] private GameObject maxUiLabel;
     
-    public int BasketFreeSpace => _basket.FreeSpace;
-    public bool BasketHasFreeSpace => _basket.FreeSpace > 0;
+    public int FreeSpaceAmount => _basket.FreeSpaceAmount;
+    public bool HasFreeSpace => _basket.FreeSpaceAmount > 0;
 
     public int RequiredQuantity;
-    public Shop PutShop;
+    public Shop putShop;
     public bool OnDestination => !navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance
                                                         && (!navAgent.hasPath || navAgent.velocity.sqrMagnitude == 0f);
     
@@ -39,9 +39,9 @@ public class Bot : MonoBehaviour
     }
     
     public bool GetProduct(){
-        if (!PutShop.StoreDefinitePositionView.CanGet) return false;
+        if (!putShop.CanGet) return false;
       
-        _basket.Put(PutShop.StoreDefinitePositionView.Get());
+        _basket.Put(putShop.Store.Get());
         return true;
     }
     

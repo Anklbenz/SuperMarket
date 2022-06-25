@@ -212,7 +212,8 @@ GameObject:
   - component: {fileID: 1554178489200108103}
   - component: {fileID: 7751324522696822288}
   - component: {fileID: 1554178489200108104}
-  - component: {fileID: 5441873597667102307}
+  - component: {fileID: 5555282891525816790}
+  - component: {fileID: 8398308145578152753}
   m_Layer: 0
   m_Name: TomatoFactory
   m_TagString: Untagged
@@ -236,6 +237,7 @@ Transform:
   - {fileID: 1554178487357369193}
   - {fileID: 1554178488381464207}
   - {fileID: 1554178487898512262}
+  - {fileID: 2823212812313739599}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -266,8 +268,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2836592811136669135, guid: eb135c8c1dae3f2478d51bcd12f0c2d6, type: 3}
   produceTime: 3000
-  resultShop: {fileID: 5441873597667102307}
---- !u!114 &5441873597667102307
+  resultShop: {fileID: 5555282891525816790}
+--- !u!114 &5555282891525816790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -276,13 +278,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 1554178489200108102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0673c504a329f4b49814af4009db4ac7, type: 3}
+  m_Script: {fileID: 11500000, guid: 81e6631edcf5dcb4d82d2d8e1dcfa9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activityPoint: {fileID: 2823212812313739599}
+  parentContainer: {fileID: 1554178487898512262}
+  productType: 0
   productPositions:
   - {fileID: 1554178487659494542}
   - {fileID: 1554178487357369193}
   - {fileID: 1554178488381464207}
-  productsParent: {fileID: 1554178487898512262}
-  pickPoint: {fileID: 0}
-  storeType: 0
+--- !u!114 &8398308145578152753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554178489200108102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85aa987184ad7774aaea7771f51ed8ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shop: {fileID: 5555282891525816790}
+--- !u!1 &5669827719787523838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2823212812313739599}
+  m_Layer: 0
+  m_Name: ActivityPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2823212812313739599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669827719787523838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1554178489200108103}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
